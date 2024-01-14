@@ -1,22 +1,25 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<BaseLayout title="About | Jeanine White" description="About Jeanine White Lorem Ipsum">
+<BaseLayout
+	title="About | Jeanine White"
+	description="About Jeanine White Lorem Ipsum"
+>
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				title="A propos de moi"
+				tagline="Découvrez mon parcours et mes compétences"
 			>
 				<img
 					width="1553"
 					height="873"
 					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
+					alt="Cheikh Malik at work"
 				/>
 			</Hero>
 
@@ -24,97 +27,122 @@ import Hero from '../components/Hero.astro';
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+						Suite à ma reconversion professionnelle en 2023, j'ai
+						entamé une formation en Développement Web et Web Mobile
+						à l'ENI École Informatique. Cette formation m'a permis
+						de me plonger dans le monde du développement, en
+						acquérant des compétences en Java, PHP, HTML/CSS,
+						JavaScript, Angular, Symfony, et bien d'autres. J'ai
+						effectué un stage chez Citykomi et réalisé un projet
+						d'étude, notamment la création de modèles de QR Code.
 					</p>
 					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
+						Ma formation à l'ENI École Informatique m'a offert une
+						solide base théorique et pratique. J'ai eu l'opportunité
+						d'apprendre de nouvelles technologies, de participer à
+						des projets stimulants et de travailler dans des
+						environnements techniques diversifiés, ce qui m'a permis
+						de développer une vision globale du processus de
+						développement web et mobile.
 					</p>
 					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
+						Mon expérience chez Citykomi a été particulièrement
+						formatrice. J'ai travaillé sur des fonctionnalités dans
+						le back-office de Citykomi, appris à interagir avec des
+						API REST, et utilisé divers outils comme React.js,
+						Postman, Figma, Visual Studio Code, Trello, GitHub, et
+						Slack. J'ai également pu expérimenter le travail en
+						méthode agile et acquérir des compétences pratiques
+						essentielles pour ma carrière.
 					</p>
 				</div>
-			</section>
-			<section>
+
 				<h2 class="section-title">Education</h2>
 				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
+					<p>
+						Mon parcours éducatif inclut un titre RNCP de niveau 5 -
+						BAC+2 en Développement Web et Web Mobile obtenu à l'ENI
+						École Informatique. Avant cela, j'ai étudié au CFA du
+						Bâtiment à Caen où j'ai effectué un apprentissage en
+						électricité. J'ai également travaillé en tant que
+						cuisinier, me fournissant ainsi une base solide et
+						polyvalente pour ma carrière professionnelle et un sens
+						aigu du travail.
+					</p>
 				</div>
-			</section>
-			<section>
 				<h2 class="section-title">Skills</h2>
 				<div class="content">
-					<p>officia unde omnis</p>
+					<p>
+						Ma palette de compétences comprend des langages de
+						programmation tels que Java, PHP, et JavaScript, avec
+						une expertise particulière en React.js et Node.js. J'ai
+						également de l'expérience avec des environnements de
+						développement variés comme Eclipse, NetBeans, et Visual
+						Studio Code, et j'ai travaillé avec des frameworks et
+						des plateformes tels que Symfony, Android, et Bootstrap.
+					</p>
 				</div>
 			</section>
 		</main>
 
 		<ContactCTA />
 	</div>
-</BaseLayout>
 
-<style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
-
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
-
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
-
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
-
-	.content {
-		grid-column: 2 / 4;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
+	<style>
 		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
+			display: flex;
+			flex-direction: column;
+			gap: 3.5rem;
 		}
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
+		img {
+			margin-top: 1.5rem;
+			border-radius: 1.5rem;
+			box-shadow: var(--shadow-md);
 		}
 
 		section {
-			display: contents;
-			font-size: var(--text-lg);
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			color: var(--gray-200);
 		}
-	}
-</style>
+
+		.section-title {
+			grid-column-start: 1;
+			font-size: var(--text-xl);
+			color: var(--gray-0);
+		}
+
+		.content {
+			grid-column: 2 / 4;
+		}
+
+		.content :global(a) {
+			text-decoration: 1px solid underline transparent;
+			text-underline-offset: 0.25em;
+			transition: text-decoration-color var(--theme-transition);
+		}
+
+		.content :global(a:hover),
+		.content :global(a:focus) {
+			text-decoration-color: currentColor;
+		}
+
+		@media (min-width: 50em) {
+			.about {
+				display: grid;
+				grid-template-columns: 1fr 60% 1fr;
+			}
+
+			.about > :global(:first-child) {
+				grid-column-start: 2;
+			}
+
+			section {
+				display: contents;
+				font-size: var(--text-lg);
+			}
+		}
+	</style>
+</BaseLayout>

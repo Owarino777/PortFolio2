@@ -1,35 +1,46 @@
 ---
-title: Markdown Mystery Tour
-publishDate: 2020-03-02 00:00:00
+title: Projet React.js
+publishDate: 2023-11-10 
 img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+img_alt: Capture d'écran de la rubrique de personnalisation de QR Code dans le Back-Office de Citykomi 
 description: |
-  We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax!
+  Développement d’une fonctionnalité dans le back-office web de Citykomi pour la gestion des modèles de 
+  QR Code. Cette fonctionnalité permet aux diffuseurs d’intégrer leur logo dans les QR 
+  Codes et de les personnaliser.
+
 tags:
   - Design
   - Dev
-  - User Testing
+  - React.JS
 ---
 
-## Level-two heading
+## Tâches et Réalisations:
 
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+> 1. Maquettage : 
+- J'ai utilisé Figma pour la conception des interfaces utilisateur, en prenant en compte les retours et les besoins du maître de stage.
+> 2. Apprentissage de React : 
+- Étant novice en React, j'ai dû apprendre les bases et me suis progressivement familiarisé avec les composants fonctionnels et les hooks de React.
+> 3. Développement Front-end : 
+- J'ai créé une interface utilisateur pour la gestion des modèles de QR Code en React, en intégrant Material UI pour le design.
+> 4. Interaction Back-end: 
+- La base de données existait déjà, donc je n'ai pas créé de base de données mais j'ai interagi avec l'API REST pour la communication avec la base de données. J'ai utilisé Node.js et MongoDB pour la gestion des données et des services back-end, dans une architecture microservices avec une base de données NoSQL.
+> 5. Intégration et Tests : 
+- J'ai mis en œuvre les fonctionnalités et effectué des tests en localhost pour assurer la qualité et la performance du système.
 
-Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+## Environnement Technique:
 
-Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
+> 1. Front-end : 
+- React JS, Material UI, Figma pour le maquettage.
+> 2. Back-end : 
+- Node.js, microservices avec Moleculer, MongoDB pour la gestion des données.
+> 3. Outils : 
+- Visual Studio Code, Trello pour la gestion de projet, Slack pour la communication, 
+GitHub pour la gestion de configuration, Postman pour interagir avec l’API REST et la BDD.
 
-### Level-three heading
+### Conclusion
 
-Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
-
-### Level-three heading
-
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
-
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
-
-#### Level-four heading
-
-- We noted this
-- And also this other point
+- l’obtention et la compréhension d’une base solide est nécessaire à la bonne pratique et à 
+mon évolution dans le monde du développement, important de ne pas négliger les bases.
+Ce stage à été une expérience enrichissante pour moi, me permettant d’acquérir des 
+compétences pratiques en développement web, particulièrement en React, et de contribuer à un 
+projet innovant chez Citykomi.
