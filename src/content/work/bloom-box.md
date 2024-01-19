@@ -5,10 +5,14 @@ img: /assets/stock-2.jpg
 img_alt: Image de l'interface du site d'apprentissage d'ecriture au clavier.
 description: |
   Ceci est un mini-projet réalisé dans le but de consolider mes bases en JavaScript et d'en améliorer ma compréhension.
+    
 tags:
   - Dev
   - JavaScript
 ---
+
+### [Essayer le projet SpeedWriting](https://projet-react-js-speed-writing.vercel.app/)
+
 ## Développement Front-end :
 
 - J'ai voulu démontrer ma capacité à développer des fonctionnalités front-end complexes.
