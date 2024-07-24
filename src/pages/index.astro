@@ -31,7 +31,7 @@ const projects = (await getCollection("work"))
 			<header class="hero">
 				<Hero
 					title="Hello, Je m'appelle Cheikh Malik"
-					tagline="Je suis un Développeur Web Junior en recherche d'une alternance, je me situe à Caen, Normandie, France."
+					tagline="Je suis un Développeur Web Junior, je me situe à Caen, Normandie, France."
 					align="start"
 				>
 					<div class="roles">
@@ -46,13 +46,6 @@ const projects = (await getCollection("work"))
 						</Pill>
 					</div>
 				</Hero>
-
-				<img
-					alt="Malik Cheikh portrait CV"
-					width="480"
-					height="620"
-					src="/assets/portrait.jpg"
-				/>
 			</header>
 
 			<Skills />
@@ -96,9 +89,7 @@ const projects = (await getCollection("work"))
 <style>
 	.hero {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		gap: 2rem;
 	}
 
 	.roles {
@@ -116,7 +107,7 @@ const projects = (await getCollection("work"))
 	@media (min-width: 50em) {
 		.hero {
 			display: grid;
-			grid-template-columns: 6fr 4fr;
+
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
 		}
@@ -125,6 +116,7 @@ const projects = (await getCollection("work"))
 			margin-top: 0.5rem;
 			display: flex;
 			gap: 0.5rem;
+			justify-content: center;
 		}
 
 		.hero img {

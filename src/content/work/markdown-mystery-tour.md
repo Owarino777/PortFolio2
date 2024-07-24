@@ -1,7 +1,7 @@
 ---
 title: Projet React.js
 publishDate: 2023-11-10 
-img: /assets/stock-1.jpg
+img: /assets/back-office Citykomi React.webp
 img_alt: Capture d'écran de la rubrique de personnalisation de QR Code dans le Back-Office de Citykomi 
 description: |
   Développement d’une fonctionnalité dans le back-office web de Citykomi pour la gestion des modèles de 
