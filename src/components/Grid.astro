@@ -13,10 +13,15 @@ const { variant } = Astro.props;
 <style>
 	.grid {
 		display: grid;
+		min-width: 0;
 		grid-auto-rows: 1fr;
 		gap: 1rem;
 		list-style: none;
 		padding: 0;
+	}
+
+	.grid > :global(li) {
+		min-width: 0;
 	}
 
 	.grid.small {
