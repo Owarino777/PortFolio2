@@ -3,11 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
+
+const technologies = ["Java", "PHP", "HTML/CSS", "JavaScript", "React.js", "Node.js", "Angular", "Symfony"];
 ---
 
 <BaseLayout
-	title="About | Jeanine White"
-	description="About Jeanine White Lorem Ipsum"
+	title="À propos | Cheikh Malik"
+	description="Découvrez le parcours et les compétences de Cheikh Malik, développeur web junior à Caen."
 >
 	<div class="stack gap-20">
 		<main class="wrapper about">
@@ -15,6 +17,7 @@ import Hero from "../components/Hero.astro";
 				title="A propos de moi"
 				tagline="Découvrez mon parcours et mes compétences"
 			/>
+			<p class="profile-summary" data-profile-summary>Développeur Web Junior à Caen, Normandie, France.</p>
 
 			<section>
 				<h2 class="section-title">Background</h2>
@@ -75,17 +78,60 @@ import Hero from "../components/Hero.astro";
 						des plateformes tels que Symfony, Android, et Bootstrap.
 					</p>
 				</div>
+				<h2 class="section-title">Technologies</h2>
+				<div class="content">
+					<ul class="technology-list" data-profile-technologies>
+						{technologies.map((technology) => <li>{technology}</li>)}
+					</ul>
+				</div>
 			</section>
 		</main>
 
 		<ContactCTA />
 	</div>
+	<script>
+		import { getApiBaseUrl, getProfile } from '../lib/portfolioApi';
+
+		if (getApiBaseUrl()) {
+			getProfile().then((profile) => {
+				const summary = document.querySelector<HTMLElement>('[data-profile-summary]');
+				const list = document.querySelector<HTMLElement>('[data-profile-technologies]');
+				if (summary) summary.textContent = `${profile.role} à ${profile.location}.`;
+				if (list) {
+					list.replaceChildren(...profile.technologies.map((technology) => {
+						const item = document.createElement('li');
+						item.textContent = technology;
+						return item;
+					}));
+				}
+			}).catch(() => {
+				// Keep the pre-rendered profile visible if the API is offline.
+			});
+		}
+	</script>
 
 	<style>
 		.about {
 			display: flex;
 			flex-direction: column;
 			gap: 3.5rem;
+		}
+		.profile-summary {
+			text-align: center;
+			color: var(--gray-300);
+		}
+		.technology-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem;
+			list-style: none;
+			padding: 0;
+		}
+		.technology-list :global(li) {
+			border: 1px solid var(--gray-800);
+			border-radius: 999rem;
+			padding: 0.45rem 0.85rem;
+			background: var(--gray-900);
 		}
 
 		img {
@@ -129,6 +175,9 @@ import Hero from "../components/Hero.astro";
 			}
 
 			.about > :global(:first-child) {
+				grid-column-start: 2;
+			}
+			.profile-summary {
 				grid-column-start: 2;
 			}
 

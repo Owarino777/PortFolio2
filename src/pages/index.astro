@@ -6,11 +6,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
 import CallToAction from "../components/CallToAction.astro";
-import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
+import ProjectGallery from "../components/ProjectGallery.astro";
 
 // Page section components
 import ContactCTA from "../components/ContactCTA.astro";
@@ -62,15 +61,7 @@ const projects = (await getCollection("work"))
 				</header>
 
 				<div class="gallery">
-					<Grid variant="offset">
-						{
-							projects.map((project) => (
-								<li>
-									<PortfolioPreview project={project} />
-								</li>
-							))
-						}
-					</Grid>
+				<ProjectGallery projects={projects} />
 				</div>
 
 				<div class="cta">

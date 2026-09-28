@@ -29,7 +29,7 @@ const { Content } = await entry.render();
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
 	<div class="stack gap-20">
-		<div class="stack gap-15">
+		<div class="stack gap-15" data-project-slug={entry.slug}>
 			<header>
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/work/"
@@ -40,7 +40,8 @@ const { Content } = await entry.render();
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
-							<p class="description">{entry.data.description}</p>
+							<p class="description" data-project-description>{entry.data.description}</p>
+							<p class="published">Publié le <time data-project-date datetime={entry.data.publishDate.toISOString().slice(0, 10)}>{entry.data.publishDate.toLocaleDateString('fr-FR')}</time></p>
 						</div>
 					</Hero>
 				</div>
@@ -52,6 +53,7 @@ const { Content } = await entry.render();
 							<img
 								src={entry.data.img}
 								alt={entry.data.img_alt || ""}
+								data-project-image
 							/>
 						)
 					}
@@ -63,6 +65,33 @@ const { Content } = await entry.render();
 		</div>
 		<ContactCTA />
 	</div>
+	<script>
+		import { getApiBaseUrl, getProject } from '../../lib/portfolioApi';
+
+		const details = document.querySelector<HTMLElement>('[data-project-slug]');
+		const slug = details?.dataset.projectSlug;
+		if (details && slug && getApiBaseUrl()) {
+			getProject(slug).then((project) => {
+				const title = details.querySelector<HTMLElement>('h1');
+				const description = details.querySelector<HTMLElement>('[data-project-description]');
+				const image = details.querySelector<HTMLImageElement>('[data-project-image]');
+				const date = details.querySelector<HTMLTimeElement>('[data-project-date]');
+				if (title) title.textContent = project.title;
+				if (description) description.textContent = project.description;
+				if (image) {
+					image.src = project.imagePath;
+					image.alt = project.imageAlt;
+				}
+				if (date) {
+					date.dateTime = project.publishDate;
+					date.textContent = new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+						.format(new Date(`${project.publishDate}T00:00:00Z`));
+				}
+			}).catch(() => {
+				// The static Markdown page remains available if the API is offline.
+			});
+		}
+	</script>
 </BaseLayout>
 
 <style>
@@ -87,6 +116,11 @@ const { Content } = await entry.render();
 	.tags {
 		display: flex;
 		gap: 0.5rem;
+	}
+
+	.published {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
 	}
 
 	.content {

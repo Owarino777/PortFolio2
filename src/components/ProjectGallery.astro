@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Grid from './Grid.astro';
+import PortfolioPreview from './PortfolioPreview.astro';
+
+interface Props {
+	projects: CollectionEntry<'work'>[];
+}
+
+const { projects } = Astro.props;
+---
+
+<div data-project-gallery>
+	<Grid variant="offset">
+		{projects.map((project) => <li data-project-slug={project.slug}><PortfolioPreview project={project} /></li>)}
+	</Grid>
+</div>
+
+<script>
+	import { getApiBaseUrl, getProjects } from '../lib/portfolioApi';
+
+	if (getApiBaseUrl()) {
+		for (const gallery of document.querySelectorAll<HTMLElement>('[data-project-gallery]')) {
+			getProjects().then((projects) => {
+				const list = gallery.querySelector('ul');
+				if (!list) return;
+				const items = new Map(
+					Array.from(list.querySelectorAll<HTMLElement>('[data-project-slug]')).map((item) => [item.dataset.projectSlug, item]),
+				);
+				for (const project of projects) {
+					const item = items.get(project.slug);
+					if (!item) continue; // A new API project needs its static Astro page first.
+					const link = item.querySelector<HTMLAnchorElement>('a.card');
+					const title = item.querySelector<HTMLElement>('.title');
+					const image = item.querySelector<HTMLImageElement>('img');
+					if (link) link.href = project.pagePath;
+					if (title) title.textContent = project.title;
+					if (image) {
+						image.src = project.imagePath;
+						image.alt = project.imageAlt;
+					}
+					list.append(item);
+				}
+			}).catch(() => {
+				// Keep the pre-rendered project cards visible if the API is offline.
+			});
+		}
+	}
+</script>
